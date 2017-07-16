@@ -1,0 +1,12 @@
+= form_for @task, :html => {:class => "form-inline"}, remote: true do |f|
+  - if @task.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
+      ul
+        - @task.errors.full_messages.each do |message|
+          li = message
+  .form-group
+    .field
+      = f.text_field :text, class: "form-control task"
+  .form-group
+    .actions= f.button 'Add task', class: "btn btn-default"
