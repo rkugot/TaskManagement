@@ -6,10 +6,13 @@ jQuery ->
     axis: 'y'
     update: ->
       $.post($(this).data('update-url'), $(this).sortable('serialize'))
-  $ ->
-  $('.edit_task input[type=submit]').remove()
-  $('.edit_task input[type=checkbox]').click ->
+jQuery.fn.submitOnCheck = ->
+  @find('input[type=submit]').remove()
+  @find('input[type=checkbox]').click ->
     $(this).parent('form').submit()
-    return
-  return
+  this
+
+jQuery ->
+    $('.edit_task').submitOnCheck()
+
 
