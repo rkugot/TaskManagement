@@ -5,14 +5,14 @@
         - @tasks.each do |task|
           - if task.complete?
             li.list-group-item.complete-task id="task_#{task.id}"
-              = form_for task do |f|
+              = form_for task, remote: true do |f|
                 = f.check_box :complete
                 = f.submit "Update"
                 = f.label :complete, task.text
                 = link_to "(remove)", task, method: :delete, data: {confirm: "Are you sure?"}
           - else
             li.list-group-item id="task_#{task.id}"
-              = form_for task do |f|
+              = form_for task, remote: true do |f|
                 = f.check_box :complete
                 = f.submit "Update"
                 = f.label :complete, task.text
