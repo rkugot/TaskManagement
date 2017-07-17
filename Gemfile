@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'slim-rails'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
+gem 'client_side_validations'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
