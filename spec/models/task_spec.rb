@@ -1,5 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Task, type: :model do
+describe Task do
   it { should validate_presence_of :text }
 end
