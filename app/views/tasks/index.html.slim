@@ -8,14 +8,14 @@
               = form_for task, remote: true do |f|
                 = f.submit "Update"
                 = f.label :complete, task.text
-                = link_to "(remove)", task, method: :delete, data: {confirm: "Are you sure?"}
+                = link_to "(remove)", task, method: :delete
                 = f.check_box :complete, class: "pull-right"
           - else
             li.list-group-item id="task_#{task.id}"
               = form_for task, remote: true do |f|
                 = f.submit "Update"
                 = f.label :complete, task.text
-                = link_to "(remove)", task, method: :delete, data: {confirm: "Are you sure?"}
+                = link_to "(remove)", task, method: :delete
                 = f.check_box :complete, class: "pull-right"
 
 
