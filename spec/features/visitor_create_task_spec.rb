@@ -6,23 +6,23 @@ feature 'Create Task' do
     expect(page).to have_content 'Add task'
   end
   scenario 'allows add task' do
-    visit '/tasks'
-    fill_in 'task[text]', with: 'Task'
-    click_button 'Add task'
-    expect(page).to have_content 'remove'
+    add_task
+    expect(page).to have_content 'Task'
   end
   scenario 'allows delete task' do        
-    visit '/tasks'
-    fill_in 'task[text]', with: 'Task'
-    click_button 'Add task'
+    add_task
     click_link '(remove)'
     expect(page).to have_no_content('Task')
   end
   scenario 'allows complete task' do        
-    visit '/tasks'
-    fill_in 'task[text]', with: 'Task'
-    click_button 'Add task'
+    add_task
     find('input[type=checkbox]').click
     expect(page).to have_content('Task')
   end
+end
+
+def add_task
+  visit '/tasks'
+  fill_in 'task[text]', with: 'Task'
+  click_button 'Add task'
 end
