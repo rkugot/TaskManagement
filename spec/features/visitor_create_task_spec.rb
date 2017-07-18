@@ -14,11 +14,6 @@ feature 'Create Task' do
     click_link '(remove)'
     expect(page).to have_no_content('Task')
   end
-  scenario 'allows complete task' do        
-    add_task
-    find('input[type=checkbox]').click
-    expect(page).to have_content('Task')
-  end
 end
 
 def add_task
